@@ -4,6 +4,7 @@ export default function Login() {
   const [formData, setFormData] = useState({
     username: "",
     password: "",
+    rememberMe: false,
   });
 
   const changeHandler = (e) => {
@@ -31,6 +32,7 @@ export default function Login() {
           <input
             type="text"
             name="username"
+            value={formData.username}
             id="username"
             onChange={changeHandler}
           />
@@ -42,9 +44,21 @@ export default function Login() {
           <input
             type="password"
             name="password"
+            value={formData.password}
             id="password"
             onChange={changeHandler}
           />
+        </div>
+
+        <div>
+          <input
+            type="checkbox"
+            name="rememberMe"
+            value={formData.rememberMe}
+            id="rememberMe"
+            onChange={changeHandler}
+          />
+          <label htmlFor="rememberMe"> Remember me</label>
         </div>
 
         <button>Login</button>
